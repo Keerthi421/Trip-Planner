@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Custom animations ──────────────────────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50%       { transform: translateY(-18px) rotate(1deg); }
+}
+@keyframes float2 {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50%       { transform: translateY(-12px) rotate(-1deg); }
+}
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50%       { opacity: 0.7;  transform: scale(1.05); }
+}
+@keyframes wave-move {
+  0%   { transform: translateX(-60%) scaleY(1); }
+  50%  { transform: translateX(0%)   scaleY(1.1); }
+  100% { transform: translateX(60%)  scaleY(1); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes marquee {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-float         { animation: float  7s ease-in-out infinite; }
+.animate-float2        { animation: float2 9s ease-in-out 1.5s infinite; }
+.animate-glow          { animation: glow-pulse 4s ease-in-out infinite; }
+.animate-wave          { animation: wave-move  8s ease-in-out infinite; }
+.animate-slide-up      { animation: slide-up 0.7s ease-out forwards; }
+.animate-spin-slow     { animation: spin-slow 20s linear infinite; }
+.animate-marquee       { animation: marquee 25s linear infinite; }
+
+/* ── Glass card ─────────────────────────────────────────────────────────── */
+.glass {
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.glass-strong {
+  background: rgba(255,255,255,0.07);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* ── Gradient text ──────────────────────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6, #fb923c);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ── Glow shadows ───────────────────────────────────────────────────────── */
+.glow-blue   { box-shadow: 0 0 40px rgba(96,165,250,0.25),   0 0 80px rgba(96,165,250,0.1); }
+.glow-purple { box-shadow: 0 0 40px rgba(167,139,250,0.25),  0 0 80px rgba(167,139,250,0.1); }
+.glow-pink   { box-shadow: 0 0 40px rgba(244,114,182,0.25),  0 0 80px rgba(244,114,182,0.1); }
+.glow-orange { box-shadow: 0 0 40px rgba(251,146,60,0.25),   0 0 80px rgba(251,146,60,0.1); }
+
+/* ── Step progress bar ──────────────────────────────────────────────────── */
+.step-progress { height:3px; background:#1e293b; border-radius:9999px; overflow:hidden; }
+.step-progress-fill { height:100%; background:#E63946; transition:width .3s ease; }
+
+/* ── Scrollbar ──────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width:6px; }
+::-webkit-scrollbar-track { background:#050818; }
+::-webkit-scrollbar-thumb { background:#334155; border-radius:9999px; }
+
+body { background:#050818; color:#f1f5f9; }
+* { box-sizing:border-box; }

@@ -1,0 +1,17 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+pydantic
+pydantic-settings
+python-jose[cryptography]
+passlib[bcrypt]
+langchain
+langchain-google-genai
+langchain-community
+chromadb
+sentence-transformers
+httpx
+python-multipart
+python-dotenv
+aiosqlite
+greenlet
