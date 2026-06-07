@@ -20,6 +20,7 @@ chroma_db/
 # Node
 node_modules/
 frontend/dist/
+frontend/.next/
 
 # IDE
 .vscode/
